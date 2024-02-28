@@ -1,9 +1,15 @@
 import express from "express";
-import { getProductController, addProductController, updateProductController, deleteProductController } from "../controllers/productController.js";
+import { getProductController, incrementproductController, dicrementproductController, getOneProductController, addProductController, updateProductController, deleteProductController } from "../controllers/productController.js";
 
 const productRouter = express.Router();
 
 productRouter.get("/getproducts", getProductController);
+
+productRouter.get("/getoneproduct", getOneProductController);
+
+productRouter.put("/incrementproduct", incrementproductController);
+
+productRouter.put("/dicrementproduct", dicrementproductController);
 
 productRouter.post("/addproducts", addProductController);
 
